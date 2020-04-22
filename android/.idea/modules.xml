@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GymGurus.iml" filepath="$PROJECT_DIR$/GymGurus.iml" group="GymGurus" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="GymGurus/app" />
+      <module fileurl="file://$PROJECT_DIR$/FoodNinja.iml" filepath="$PROJECT_DIR$/FoodNinja.iml" group="FoodNinja" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="FoodNinja/app" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package ro.upt.gymgurus;
+package ro.upt.foodninja;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -27,14 +27,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/guideline_user_info"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.55"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/guideline_appIcon_login"
-        app:layout_constraintGuide_percent="0.45"/>
+        app:layout_constraintGuide_percent="0.5"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -57,21 +57,20 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         tools:ignore="MissingConstraints">
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/app_icon"
-        android:id="@+id/iv_app_icon_login"
-        android:layout_centerHorizontal="true"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/app_icon"
+            android:id="@+id/iv_app_icon_login"
+            android:layout_centerHorizontal="true"
+            tools:ignore="MissingConstraints" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_app_icon_login"
             android:text="Find your fit."
             android:textStyle="bold|italic"
-            android:fontFamily="monospace"
-            />
+            android:fontFamily="monospace" />
     </RelativeLayout>
 
     <LinearLayout
@@ -85,25 +84,27 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_user_email"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:hint="Email"
-        tools:ignore="MissingConstraints" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_user_email"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Email"
+                android:fontFamily="monospace"
+                tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:inputType="textPassword"
-        android:id="@+id/et_user_password"
-        android:layout_below="@id/et_user_email"
-        tools:ignore="MissingConstraints" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:hint="Password"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="textPassword"
+                android:id="@+id/et_user_password"
+                android:layout_below="@id/et_user_email"
+                tools:ignore="MissingConstraints" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,11 +126,7 @@
                 android:text="No account? Sign up"
                 android:fontFamily="monospace"
                 android:textStyle="italic"
-                android:layout_centerHorizontal="true"
-                />
-
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

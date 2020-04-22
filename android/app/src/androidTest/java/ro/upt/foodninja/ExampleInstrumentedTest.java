@@ -1,4 +1,4 @@
-package ro.upt.gymgurus;
+package ro.upt.foodninja;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("ro.upt.gymgurus", appContext.getPackageName());
+        assertEquals("ro.upt.foodninja", appContext.getPackageName());
     }
 }
