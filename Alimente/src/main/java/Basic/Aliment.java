@@ -1,6 +1,7 @@
 package Basic;
+import java.io.Serializable;
 
-public class Aliment {
+public class Aliment implements Serializable{
     private Macronutrient fat, carbohidrate, protein;
     private String numeAliment;
     private double calories;
@@ -14,6 +15,6 @@ public class Aliment {
     }
 
     public String toString() {
-        return numeAliment + "->" + calories + " kcal" + " (" + fat + ", " + carbohidrate + ", " + protein + ");";
+        return numeAliment + "->" + calories + " kcal" + " (" + protein + ", " + carbohidrate + ", " + fat + ");";
     }
 }

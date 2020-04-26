@@ -1,6 +1,8 @@
 package Basic;
 
-public class Macronutrient {
+import java.io.Serializable;
+
+public class Macronutrient implements Serializable{
     private String macroName;
     private double grams;
     private double calories;

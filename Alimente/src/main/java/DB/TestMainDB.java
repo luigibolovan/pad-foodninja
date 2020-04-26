@@ -2,23 +2,27 @@ package DB;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import Basic.*;
 
 public class TestMainDB {
-    public static void main(String[] args) throws SQLException {
+    public static ArrayList<Aliment> test() throws SQLException {
+        ArrayList<Aliment> alimente = new ArrayList<Aliment>();
         Connection conn = DBConnector.connectToDB();
-
-        String query = " insert into alimente (nume_aliment,protein,carbs,fat)" + " values (?,?,?,?)";
-
+        String query = "select alimente.nume_aliment, alimente.protein, alimente.carbs, alimente.fat from alimente;";
         PreparedStatement preparedStmt = conn.prepareStatement(query);
-        preparedStmt.setString(1, "paine");
-        preparedStmt.setDouble(2, 8.4);
-        preparedStmt.setDouble(3, 47.4);
-        preparedStmt.setDouble(4, 1.2);
-        preparedStmt.execute();
+        ResultSet rs = preparedStmt.executeQuery();
+        while(rs.next()){
+            Aliment a = new Aliment(rs.getString(1), rs.getDouble(4), rs.getDouble(3), rs.getDouble(2));
+            alimente.add(a);
+        }
 
         //conn.close();
 
+        return alimente;
     }
 
 }
