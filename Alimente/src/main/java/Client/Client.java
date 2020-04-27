@@ -20,14 +20,12 @@ public class Client {
             String str = "";
 
             alimente = (ArrayList<Aliment>) inobj.readObject();
-
+            Iterator iter = alimente.iterator();
             while (!str.equals("stop")) {
                 str = br.readLine();
-                Iterator iter = alimente.iterator();
-                while (iter.hasNext()) {
+                if (iter.hasNext()) {
                     System.out.println(iter.next());
                 }
-
             }
             inobj.close();
             ins.close();

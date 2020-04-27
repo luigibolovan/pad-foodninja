@@ -15,24 +15,15 @@ public class Server {
             Socket s = ss.accept();
 
             ArrayList<Aliment> alimente = TestMainDB.test();
-            /*Iterator iter = alimente.iterator();
-            while (iter.hasNext()) {
-                System.out.println(iter.next());
-            }*/
 
             OutputStream outs = s.getOutputStream();
             ObjectOutputStream outob = new ObjectOutputStream(outs);
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            outob.writeObject(alimente);
             String str = "";
-            while(!str.equals("stop")) {
-                Iterator iter = alimente.iterator();
-                while (iter.hasNext()) {
-                    outob.writeObject(alimente);
-                }
-                outob.flush();
+            while (!str.equals("stop")) {
                 str = br.readLine();
             }
-
             outob.close();
             outs.close();
             s.close();
