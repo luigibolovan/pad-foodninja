@@ -17,4 +17,7 @@ public class Aliment implements Serializable{
     public String toString() {
         return numeAliment + "->" + calories + " kcal" + " (" + protein + ", " + carbohidrate + ", " + fat + ");";
     }
+    public String getName(){
+        return numeAliment;
+    }
 }

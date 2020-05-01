@@ -10,25 +10,40 @@ import java.util.Iterator;
 public class Client {
     public static void main(String[] args){
         try{
-            ArrayList<Aliment> alimente;
+            ArrayList<Aliment> alimente = new ArrayList<Aliment>();
 
             Socket s = new Socket("localhost",4000);
 
-            InputStream ins = s.getInputStream();
-            ObjectInputStream inobj = new ObjectInputStream(ins);
+            DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+            ObjectInputStream inobj = new ObjectInputStream(s.getInputStream());
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String str = "";
 
-            alimente = (ArrayList<Aliment>) inobj.readObject();
-            Iterator iter = alimente.iterator();
-            while (!str.equals("stop")) {
+            while(true) {
+                System.out.print("Introduceti actiunea: ");
+                String str = br.readLine();
+
+                if(str.equals("exit")) break;
+
+                dout.writeUTF(str);
+                dout.flush();
+
                 str = br.readLine();
-                if (iter.hasNext()) {
-                    System.out.println(iter.next());
-                }
+                if(str.equals("exit")) break;
+
+                dout.writeUTF(str);
+                dout.flush();
+
+                alimente.add((Aliment) inobj.readObject());
             }
+
+            Iterator i = alimente.iterator();
+
+            while(i.hasNext()){
+                System.out.println(i.next());
+            }
+
             inobj.close();
-            ins.close();
+            dout.close();
             s.close();
         }catch(Exception e){System.out.println(e);}
     }
