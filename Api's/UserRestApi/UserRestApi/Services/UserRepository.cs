@@ -17,7 +17,7 @@ namespace UserRestApi.Services
                 throw new ArgumentNullException(nameof(userContext));
         }
 
-        public void Adduser(User user)
+        public void AddUser(User user)
         {
             if (user == null)
                 throw new ArgumentNullException(nameof(user));
@@ -36,7 +36,7 @@ namespace UserRestApi.Services
             _userContext.UsersInformation.Add(userInformation);
         }
 
-        public void Deleteuser(User user)
+        public void DeleteUser(User user)
         {
             if (user == null)
                 throw new ArgumentNullException(nameof(user));

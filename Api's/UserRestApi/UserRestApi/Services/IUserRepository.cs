@@ -11,9 +11,9 @@ namespace UserRestApi.Services
         IEnumerable<User> GetUsers();
         IEnumerable<User> GetUsers(IEnumerable<Guid> userIds);
         User GetUser(Guid userId);
-        void Adduser(User user);
+        void AddUser(User user);
         void UpdateUser(User user);
-        void Deleteuser(User user);
+        void DeleteUser(User user);
 
         UserInformation GetUserInformation(Guid userId);
         void AddUserInformation(Guid userId, UserInformation userInformation);
