@@ -15,7 +15,7 @@ import DB.*;
 public class Server {
     private static ArrayList<Aliment> alimente;
     private static ArrayList<ClientHandler> clients = new ArrayList<ClientHandler>();
-    private static int port = 4000;
+    private static int port = 8080;
     private static ExecutorService pool = Executors.newFixedThreadPool(5);
 
     public static void main(String[] args){
