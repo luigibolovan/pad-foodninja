@@ -22,28 +22,28 @@ namespace FoodApi.DbContexts
             modelBuilder.Entity<Aliment>().HasData(new Aliment {
                 Id = Guid.Parse("6b1eea43-5597-45a6-bdea-e68c60564247"),
                 Name = "Macaroane",
-                CaloriesPer1Gram = 2,
-                ProteinPer1Gram = 1,
-                FatPer1Gram = 1,
-                CarbohidratesPer1Gram = 3
+                CaloriesPer100Gram = 2,
+                ProteinPer100Gram = 1,
+                FatPer100Gram = 1,
+                CarbohidratesPer100Gram = 3
             },
             new Aliment
             {
                 Id = Guid.Parse("6b1eea43-5597-45a6-bdea-e68c60564274"),
                 Name = "Lapte",
-                CaloriesPer1Gram = 2,
-                ProteinPer1Gram = 1,
-                FatPer1Gram = 1,
-                CarbohidratesPer1Gram = 3
+                CaloriesPer100Gram = 2,
+                ProteinPer100Gram = 1,
+                FatPer100Gram = 1,
+                CarbohidratesPer100Gram = 3
             },
             new Aliment
             {
                 Id = Guid.Parse("6b1eea43-5597-45a6-bdea-e68c60564435"),
                 Name = "Oua",
-                CaloriesPer1Gram = 2,
-                ProteinPer1Gram = 1,
-                FatPer1Gram = 1,
-                CarbohidratesPer1Gram = 3
+                CaloriesPer100Gram = 2,
+                ProteinPer100Gram = 1,
+                FatPer100Gram = 1,
+                CarbohidratesPer100Gram = 3
             }
             );
 

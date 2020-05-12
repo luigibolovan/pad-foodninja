@@ -14,16 +14,16 @@ namespace FoodApi.Entities
         [MaxLength(100, ErrorMessage = "Aliment name must be up to 100 characters")]
         public string Name { get; set; }
         [Required]
-        [Range(0, 100)]
-        public int CaloriesPer1Gram { get; set; }
+        [Range(0, 2000)]
+        public int CaloriesPer100Gram { get; set; }
         [Required]
-        [Range(0, 100)]
-        public int ProteinPer1Gram { get; set; }
+        [Range(0, 2000)]
+        public int ProteinPer100Gram { get; set; }
         [Required]
-        [Range(0, 100)]
-        public int FatPer1Gram { get; set; }
+        [Range(0, 2000)]
+        public int FatPer100Gram { get; set; }
         [Required]
-        [Range(0, 100)]
-        public int CarbohidratesPer1Gram { get; set; }
+        [Range(0, 2000)]
+        public int CarbohidratesPer100Gram { get; set; }
     }
 }
