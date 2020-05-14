@@ -30,10 +30,22 @@ namespace UserApi
         {
             services.AddControllers();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddDbContext<UserContext>(options =>
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+                services.AddDbContext<UserContext>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("AzureConnection"));
+                });
+            }
+            else
+            {
+                services.AddDbContext<UserContext>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                });
+            }
+
+            services.BuildServiceProvider().GetService<UserContext>().Database.Migrate();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -29,10 +29,23 @@ namespace FoodApi
         {
             services.AddControllers();
             services.AddScoped<IFoodRepository, FoodRepository>();
-            services.AddDbContext<FoodContext>(options =>
+
+            if(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+                services.AddDbContext<FoodContext>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("AzureConnection"));
+                });
+            }
+            else
+            {
+                services.AddDbContext<FoodContext>(options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                });
+            }
+
+            services.BuildServiceProvider().GetService<FoodContext>().Database.Migrate();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
