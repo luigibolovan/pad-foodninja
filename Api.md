@@ -4,6 +4,7 @@ To access the users:
 
     - GET: https://userapi20200513114529.azurewebsites.net/api/users -> to get all users:
             https://userapi20200513114529.azurewebsites.net/api/users/{userID} -> to get a specific user (example userID: "6b1eea43-5597-45a6-bdea-e68c60564243");
+            https://userapi20200513114529.azurewebsites.net/api/usernames/{UserName} -> to get a specific user by UserName
     - POST: https://userapi20200513114529.azurewebsites.net/api/users  -> to post a new user int the database;
     - DELETE: https://userapi20200513114529.azurewebsites.net/api/users/{userID} -> to delete a user from database
     - Example of a valid user in json format:
