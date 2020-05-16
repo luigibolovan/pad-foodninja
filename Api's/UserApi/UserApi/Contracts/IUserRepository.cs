@@ -11,6 +11,7 @@ namespace UserApi.Contracts
         User GetUser(Guid userId);
         void DeleteUser(User user);
         void UpdateUser(User user);
+        User GetUserByUserName(string userName);
         void CreateUser(User user);
         IEnumerable<User> GetUsers();
         bool UserExist(Guid userId);
