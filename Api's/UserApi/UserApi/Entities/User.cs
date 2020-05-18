@@ -13,6 +13,7 @@ namespace UserApi.Entities
         [Required]
         public string UserName { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }

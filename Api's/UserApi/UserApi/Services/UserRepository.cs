@@ -41,6 +41,16 @@ namespace UserApi.Services
             return _contex.Users.Where(usr => usr.Id == userId).FirstOrDefault();
         }
 
+        public User GetUserByUserName(string userName)
+        {
+            if (string.IsNullOrWhiteSpace(userName))
+                throw new ArgumentNullException(nameof(userName));
+
+            return _contex.Users
+                .Where(usr => usr.UserName == userName)
+                .FirstOrDefault();
+        }
+
         public IEnumerable<User> GetUsers()
         {
             return _contex.Users.ToList();
