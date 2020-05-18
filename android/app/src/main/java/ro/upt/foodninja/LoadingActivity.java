@@ -16,7 +16,7 @@ public class LoadingActivity extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            Intent nextActivityIntent = new Intent(LoadingActivity.this, LoginActivity.class);
+            Intent nextActivityIntent = new Intent(LoadingActivity.this, DashboardActivity.class);
             startActivity(nextActivityIntent);
             finish();
         }
