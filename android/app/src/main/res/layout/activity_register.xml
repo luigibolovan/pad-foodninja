@@ -66,15 +66,20 @@
             android:textStyle="bold|italic"
             android:fontFamily="monospace" />
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
+    <ScrollView
         android:layout_width="0dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/guideline_login_left"
         app:layout_constraintRight_toRightOf="@id/guideline_login_right"
         app:layout_constraintTop_toBottomOf="@id/guideline_user_info"
+        android:fillViewport="false"
+        android:scrollbars="none"
+        android:paddingBottom="96dp"
         tools:ignore="MissingConstraints">
+        <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -83,10 +88,17 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_user_email"
+                android:id="@+id/et_user_register_username"
                 android:hint="Username"
                 android:fontFamily="monospace"
                 tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_user_register_username"
+                android:id="@+id/tv_register_username_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -94,41 +106,73 @@
                 android:fontFamily="monospace"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:id="@+id/et_user_password"
-                android:layout_below="@id/et_user_email"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_user_height"
-                android:layout_below="@id/et_user_password"
-                android:hint="Height"
-                android:fontFamily="monospace"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_user_weight"
-                android:layout_below="@id/et_user_height"
-                android:hint="Weight"
-                android:fontFamily="monospace"
-                tools:ignore="MissingConstraints" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_user_age"
-                android:layout_below="@id/et_user_weight"
-                android:hint="Age"
-                android:fontFamily="monospace"
+                android:id="@+id/et_user_register_password"
+                android:layout_below="@id/tv_register_username_errormsg"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/et_user_register_password"
+                android:id="@+id/tv_register_password_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_user_height"
+                android:layout_below="@id/tv_register_password_errormsg"
+                android:hint="Height(cm)"
+                android:inputType="numberDecimal"
+                android:fontFamily="monospace"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_user_height"
+                android:id="@+id/tv_register_height_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_user_weight"
+                android:layout_below="@id/tv_register_height_errormsg"
+                android:hint="Weight(kg)"
+                android:inputType="numberDecimal"
+                android:fontFamily="monospace"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_user_weight"
+                android:id="@+id/tv_register_weight_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_user_age"
+                android:layout_below="@id/tv_register_weight_errormsg"
+                android:hint="Age"
+                android:fontFamily="monospace"
+                android:inputType="numberDecimal"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/et_user_age"
+                android:id="@+id/tv_register_age_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_register_age_errormsg"
                 android:id="@+id/tv_gender"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"
@@ -140,14 +184,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/checkbox_male"
                 android:layout_toEndOf="@id/tv_gender"
-                android:layout_below="@id/et_user_age"
+                android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/tv_gender"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_user_age"
+                android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/checkbox_male"
                 android:id="@+id/tv_male"
                 android:textSize="16sp"
@@ -159,27 +203,39 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/checkbox_female"
                 android:layout_toEndOf="@id/tv_male"
-                android:layout_below="@id/et_user_age"
+                android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/tv_male"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_user_age"
+                android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/checkbox_female"
                 android:id="@+id/tv_female"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"
                 android:text="F"
                 android:layout_toEndOf="@id/checkbox_female" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_register_age_errormsg"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:id="@+id/tv_register_gender_errormsg"
+                android:textColor="@color/colorRed"
+                android:textSize="8sp"
+                android:layout_alignParentRight="true" />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_gender"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/login_button"
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_register"
                 android:text="Join"
                 android:fontFamily="monospace"
                 android:textStyle="italic"
@@ -187,4 +243,5 @@
 
         </RelativeLayout>
     </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
