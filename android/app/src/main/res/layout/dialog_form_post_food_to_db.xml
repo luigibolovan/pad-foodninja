@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guideline_form_left"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guideline_form_right"
+        app:layout_constraintGuide_percent="0.95"/>
+
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/guideline_form_left"
+        app:layout_constraintRight_toLeftOf="@id/guideline_form_right"
+        android:paddingTop="16dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Add new food item to database"
+            android:id="@+id/tv_form_title"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_form_title"
+            android:id="@+id/et_form_food_name"
+            android:layout_marginTop="8dp"
+            android:hint="Name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_form_food_name"
+            android:id="@+id/et_form_calories_per_100g"
+            android:layout_marginTop="4dp"
+            android:hint="Calories per 100 grams"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_form_calories_per_100g"
+            android:id="@+id/et_form_protein_per_100g"
+            android:layout_marginTop="4dp"
+            android:hint="Protein per 100 grams"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_form_protein_per_100g"
+            android:id="@+id/et_form_fat_per_100g"
+            android:layout_marginTop="4dp"
+            android:hint="Fat per 100 grams"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_form_fat_per_100g"
+            android:id="@+id/et_form_carbs_per_100g"
+            android:layout_marginTop="4dp"
+            android:hint="Carbs per 100 grams"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_form_carbs_per_100g"
+            android:background="@color/colorAppPrimary"
+            android:text="Submit"
+            android:textStyle="italic"
+            android:textColor="#ffffff"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
