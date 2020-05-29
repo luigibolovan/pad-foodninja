@@ -107,6 +107,7 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:id="@+id/et_user_register_password"
+                android:layout_marginTop="8dp"
                 android:layout_below="@id/tv_register_username_errormsg"
                 tools:ignore="MissingConstraints" />
 
@@ -124,6 +125,7 @@
                 android:id="@+id/et_user_height"
                 android:layout_below="@id/tv_register_password_errormsg"
                 android:hint="Height(cm)"
+                android:layout_marginTop="8dp"
                 android:inputType="numberDecimal"
                 android:fontFamily="monospace"
                 tools:ignore="MissingConstraints" />
@@ -143,6 +145,7 @@
                 android:hint="Weight(kg)"
                 android:inputType="numberDecimal"
                 android:fontFamily="monospace"
+                android:layout_marginTop="8dp"
                 tools:ignore="MissingConstraints" />
             <TextView
                 android:layout_width="wrap_content"
@@ -160,6 +163,7 @@
                 android:hint="Age"
                 android:fontFamily="monospace"
                 android:inputType="numberDecimal"
+                android:layout_marginTop="8dp"
                 tools:ignore="MissingConstraints" />
             <TextView
                 android:layout_width="wrap_content"
@@ -175,7 +179,7 @@
                 android:layout_below="@id/tv_register_age_errormsg"
                 android:id="@+id/tv_gender"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text="Gender" />
@@ -187,6 +191,7 @@
                 android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/tv_gender"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginLeft="16dp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -195,7 +200,7 @@
                 android:layout_toRightOf="@id/checkbox_male"
                 android:id="@+id/tv_male"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:text="M"/>
 
             <CheckBox
@@ -206,6 +211,7 @@
                 android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_toRightOf="@id/tv_male"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginLeft="16dp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -214,7 +220,7 @@
                 android:layout_toRightOf="@id/checkbox_female"
                 android:id="@+id/tv_female"
                 android:textSize="16sp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:text="F"
                 android:layout_toEndOf="@id/checkbox_female" />
 
@@ -223,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_register_age_errormsg"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="16dp"
                 android:id="@+id/tv_register_gender_errormsg"
                 android:textColor="@color/colorRed"
                 android:textSize="8sp"
@@ -233,7 +239,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_gender"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="32dp"
                 android:background="@drawable/login_button"
                 android:id="@+id/btn_register"
                 android:text="Join"

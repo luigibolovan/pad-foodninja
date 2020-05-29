@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"
+        android:id="@+id/guideline_toolbar"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"
+        android:id="@+id/guideline_button"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_button_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_stats_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guideline_calories"
+        app:layout_constraintGuide_percent="0.36"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guideline_proteines_per_100g"
+        app:layout_constraintGuide_percent="0.60"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guideline_fat_per_100g"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guideline_carbs_per_100g"
+        app:layout_constraintGuide_percent="0.80"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guideline_end"
+        app:layout_constraintGuide_percent="1"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:id="@+id/toolbar_dashboard"
+        android:background="@color/colorPrimary">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_dashboard_login"
+                android:text="username"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log out"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/tv_recipe_logout"
+                android:paddingEnd="8dp"
+                android:clickable="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingRight="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/title_recipe_name"
+                android:text="Recipe name"
+                android:textSize="16sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cardview_doorLockCard"
+        android:layout_height="280dp"
+        android:outlineAmbientShadowColor="#000000"
+        android:outlineSpotShadowColor="#000000"
+        android:layout_below="@id/toolbar_dashboard">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout_estimated"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textSize="64sp"
+                    android:id="@+id/tv_recipeCalories"
+                    android:textColor="#006400"
+                    android:layout_centerInParent="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories per 100 grams"
+                    android:textStyle="italic|bold"
+                    android:fontFamily="monospace"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@id/tv_recipeCalories" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline_proteines_per_100g"
+        app:layout_constraintLeft_toRightOf="@id/guideline_stats_start">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/proteinmeat"
+            android:id="@+id/iv_protein"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_protein"
+            android:text="Proteins per 100 grams:"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/iv_protein"
+            android:layout_marginLeft="8dp"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/iv_protein" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_protein_value"
+            android:layout_toEndOf="@id/tv_protein"
+            android:text="0"
+            android:layout_marginStart="4dp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/tv_protein"
+            android:layout_marginLeft="4dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline_fat_per_100g"
+        app:layout_constraintLeft_toRightOf="@id/guideline_stats_start">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/fat"
+            android:id="@+id/iv_fat"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_fat"
+            android:text="Fat per 100 grams:"
+            android:layout_toEndOf="@id/iv_fat"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/iv_fat" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_fat_value"
+            android:layout_toEndOf="@id/tv_fat"
+            android:text="0"
+            android:textSize="18sp"
+            android:layout_marginStart="4dp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/tv_fat"
+            android:layout_marginLeft="4dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline_carbs_per_100g"
+        app:layout_constraintLeft_toRightOf="@id/guideline_stats_start">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/carbohydrate"
+            android:id="@+id/iv_carbs"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_carbs"
+            android:text="Carbs per 100 grams:"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/iv_carbs"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/iv_carbs"
+            android:layout_marginLeft="8dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_carbs_value"
+            android:layout_toEndOf="@id/tv_carbs"
+            android:text="0"
+            android:textSize="18sp"
+            android:layout_marginStart="4dp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            android:layout_toRightOf="@id/tv_carbs"
+            android:layout_marginLeft="4dp" />
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_quantity"
+        app:layout_constraintBottom_toTopOf="@id/guideline_quantity"
+        app:layout_constraintLeft_toRightOf="@id/guideline_stats_start"
+        app:layout_constraintRight_toLeftOf="@id/guideline_button_vertical"
+        android:hint="Insert quantity (grams)"
+        android:textSize="16sp"
+        android:fontFamily="monospace"
+        android:textStyle="italic"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/btn_add_quantity"
+        android:background="@drawable/add_button"
+        app:layout_constraintLeft_toRightOf="@id/guideline_button_vertical"
+        app:layout_constraintBottom_toTopOf="@id/guideline_quantity"
+        android:text="✓"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/btn_dashboard_add"
+        android:background="@drawable/add_button"
+        app:layout_constraintLeft_toRightOf="@id/guideline_button_vertical"
+        app:layout_constraintTop_toBottomOf="@id/guideline_button"
+        android:text="+"
+        android:textSize="32sp"
+        android:textColor="#ffffff"
+        android:layout_alignParentRight="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

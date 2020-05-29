@@ -75,7 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-//    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private boolean areInputsOk() {
         TextView usernameErrTextView    = findViewById(R.id.tv_register_username_errormsg);
         TextView passwordErrTextView    = findViewById(R.id.tv_register_password_errormsg);
@@ -94,54 +93,32 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(usernameInput.length() < 3){
             usernameErrTextView.setText("Username should be at least 3 characters long");
-//            setRedBackgroundTintOnError(mUsername);
             return false;
         }
         if(passwordInput.length() < 6){
             passwordErrTextView.setText("Password should be at least 6 characters long");
-//            setRedBackgroundTintOnError(mPassword);
             return false;
         }
 
-        if(heightInput.matches("[a-zA-Z]")){
-            heightErrTextView.setText("Height should have only digits");
-//            setRedBackgroundTintOnError(mUserHeight);
-            return false;
-        }
 
         if(heightInput.length() < 2 || heightInput.length() > 3){
             heightErrTextView.setText("Invalid height");
-//            setRedBackgroundTintOnError(mUserHeight);
-            return false;
-        }
-
-        if(weightInput.matches("[a-zA-Z]")){
-            weightErrTextView.setText("Weight should have only digits");
-//            setRedBackgroundTintOnError(mUserWeight);
             return false;
         }
 
         if(weightInput.length() < 2 || weightInput.length() > 3){
             weightErrTextView.setText("Invalid weight");
-//            setRedBackgroundTintOnError(mUserWeight);
             return false;
         }
 
-        if(ageInput.matches("[a-zA-Z]")){
-            ageErrTextView.setText("Age should have only digits");
-//            setRedBackgroundTintOnError(mUserAge);
-            return false;
-        }
 
         if(Integer.parseInt(ageInput) < 18){
             ageErrTextView.setText("You should be over 18 to have an account");
-//            setRedBackgroundTintOnError(mUserAge);
             return false;
         }
 
         if(Integer.parseInt(ageInput) > 90){
             ageErrTextView.setText("We doubt you're this old");
-//            setRedBackgroundTintOnError(mUserAge);
             return false;
         }
 
@@ -151,12 +128,6 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         return true;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @SuppressLint("ResourceAsColor")
-    private void setRedBackgroundTintOnError(EditText userInput){
-        userInput.setBackgroundTintList(ColorStateList.valueOf(R.color.colorRed));
     }
 
     private void addUser() throws JSONException {

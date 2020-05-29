@@ -7,39 +7,35 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText        mUsername;
-    private EditText        mPassword;
-    private Button          mLoginBtn;
-    private Button          mRegisterBtn;
-    private RequestQueue    mQueue;
-    private boolean         isValid;
+    private EditText mUsername;
+    private EditText mPassword;
+    private Button mLoginBtn;
+    private Button mRegisterBtn;
+    private RequestQueue mQueue;
+    private boolean isValid;
 
-    public  final static String USERNAME_KEY        = "USRNAME_K";
+    public final static String USERNAME_KEY         = "USRNAME_K";
     private final static String USER_ENDPOINT_ROOT  = "https://userapi20200513114529.azurewebsites.net/api/usernames/";
-    public  final static String LOGIN_PREFERENCES   = "LOGINPREFERENCES";
-    public  final static String IS_LOGGED_IN        = "LOGGED";
+    public final static String LOGIN_PREFERENCES    = "LOGINPREFERENCES";
+    public final static String IS_LOGGED_IN         = "LOGGED";
 
 
     @Override
@@ -47,11 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mUsername       = findViewById(R.id.et_user_login_username);
-        mPassword       = findViewById(R.id.et_user_login_password);
-        mLoginBtn       = findViewById(R.id.btn_login);
-        mRegisterBtn    = findViewById(R.id.btn_signup);
-        isValid         = false;
+        mUsername = findViewById(R.id.et_user_login_username);
+        mPassword = findViewById(R.id.et_user_login_password);
+        mLoginBtn = findViewById(R.id.btn_login);
+        mRegisterBtn = findViewById(R.id.btn_signup);
+        isValid = false;
     }
 
     @Override
@@ -66,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
                 String usernameInput = mUsername.getText().toString();
                 String passwordInput = mPassword.getText().toString();
                 //add rules for password maybe
-                if(userIsValid(usernameInput, passwordInput)){
+                if (userIsValid(usernameInput, passwordInput)) {
                     //successfully logged in
                     setLoggedInState(usernameInput);
 
-                    Intent dashboardIntent = new Intent(LoginActivity.this, DashboardActivity.class);
+                    Intent dashboardIntent = new Intent(LoginActivity.this, FoodListActivity.class);
                     dashboardIntent.putExtra(USERNAME_KEY, usernameInput);
                     startActivity(dashboardIntent);
                     finish();
@@ -113,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 //verify password because there is an user with the entered username
                 try {
                     String userPasswordFromDB = response.getString("password");
-                    isValid = userPasswordFromDB.equals(passwordInput);
+                    isValid = passwordInput.equals(userPasswordFromDB);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
